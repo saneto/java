@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="TP2/|TP4/|Controle/src/|Entier/|CoupeDuMonde/|RS232 javacomm/|TP5/Agenda/|coucou/src/|IMC/|TP1/|TP7/|tableau/|Sac postal/|tp3/|chifoumi/" kind="src" path=""/>
+	<classpathentry kind="src" path="chifoumi"/>
+	<classpathentry kind="src" path="Controle/src"/>
+	<classpathentry kind="src" path="coucou/src"/>
+	<classpathentry kind="src" path="CoupeDuMonde"/>
+	<classpathentry kind="src" path="Entier"/>
+	<classpathentry kind="src" path="IMC"/>
+	<classpathentry kind="src" path="RS232 javacomm"/>
+	<classpathentry kind="src" path="Sac postal"/>
+	<classpathentry kind="src" path="tableau"/>
+	<classpathentry kind="src" path="TP1"/>
+	<classpathentry kind="src" path="TP2"/>
+	<classpathentry kind="src" path="tp3"/>
+	<classpathentry kind="src" path="TP4"/>
+	<classpathentry kind="src" path="TP5/Agenda"/>
+	<classpathentry kind="src" path="TP7"/>
+	<classpathentry kind="output" path="Controle/bin"/>
+</classpath>

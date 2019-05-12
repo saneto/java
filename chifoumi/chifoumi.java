@@ -1,0 +1,88 @@
+import java.io.*;
+public class chifoumi
+{
+	BufferedReader clavier;
+	int Choixjoueur, Choixmachine, j=0 , m=0;
+	
+	public void getchoixJoueur()
+	{
+		String saisie;
+		System.out.println("Entrez votre choix");
+		System.out.println("\t 0 pour le Caillou, 1 pour Papier et 2 pour Ciseaux");
+		try 
+			{
+				saisie=clavier.readLine();
+				Choixjoueur=Integer.parseInt(saisie);
+			}
+			catch(IOException e){}
+	}
+	public chifoumi()
+	{
+		clavier=new BufferedReader(new InputStreamReader(System.in));
+	}
+	public void getchoixMachine()
+	{
+		int r;
+		r=(int)(Math.random() * 3);
+		Choixmachine=r;
+	}
+	public void resultatJeu()
+	{
+		int r;
+		if(Choixjoueur==0 && Choixmachine==0 || Choixjoueur==1 && Choixmachine==1 || Choixjoueur==2 && Choixmachine==2)
+		{
+			System.out.println("Egalité");
+			r=1;
+			
+		}
+		if(Choixjoueur==0 && Choixmachine==1 || Choixjoueur==1 && Choixmachine==2 || Choixjoueur==2 && Choixmachine==0)
+		{
+			System.out.println("Vous avez perdu");
+			r=2;
+			m++;
+		}
+		if(Choixjoueur==1 && Choixmachine==0 || Choixjoueur==2 && Choixmachine==1 || Choixjoueur==0 && Choixmachine==2)
+		{
+			System.out.println("Vous avez gagné");
+			r=3;
+			j++;
+		}
+	}
+	public String conversion(int choix)
+	{
+		String r="";
+		
+		if(choix==0)
+		{
+			r="Caillou";
+			
+		}
+		if(choix==1)
+		{	
+			r="Papier";
+
+		}
+		if(choix==2)
+		{	
+			r="Ciseaux";
+			
+		}
+		return r;
+	}
+	public void affichechoix()
+	{
+		String r;
+		r=conversion(Choixjoueur);
+		System.out.println("Vous avez choisi " + r);
+		r=conversion(Choixmachine);
+		System.out.println("La machine a choisi " + r);
+	}
+	/*public static void main(String[]args)
+	{
+		chifoumi C=new chifoumi();
+		C.getchoixJoueur();
+		C.getchoixMachine();
+		C.resultatJeu();
+		C.affichechoix();
+	}*/
+}

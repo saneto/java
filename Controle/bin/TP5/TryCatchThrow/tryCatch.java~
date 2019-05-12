@@ -1,0 +1,42 @@
+package essai;
+
+public class tryCatch {
+
+	public static void main(String[] argv) {
+		String[] lst = {"zz","5.2"};
+		
+		float nb=0.2/0.0;
+		System.out.println(nb);
+		
+		try{
+			System.out.println("La moyenne est de " + moyenne(lst)+ ".");
+		}catch(Exception e){
+			System.out.println("La moyenne n'a pas put être calculée.");
+		}
+	}
+	
+	static int moyenne(String[] liste) throws Exception{
+		int somme = 0, nbNotes = 0, entier;
+		for (int i = 0; i<liste.length; i++){
+			try{
+				entier = Integer.parseInt(liste[i]);
+				intervalOK(entier);
+				somme += entier;
+				nbNotes++;
+			}catch(NumberFormatException e){
+				System.out.println("La "+(i+1)+" eme note n'est pas entiere");
+				e.printStackTrace();
+			}catch(Exception e){
+				System.out.println("La "+(i+1)+" eme note n'est pas entiere");
+				e.printStackTrace();
+			}
+		}
+		if(nbNotes == 0)	throw new Exception("Attention : nbNotes == 0");
+		return somme/nbNotes;
+	}
+	
+	static void intervalOK(int a) throws Exception{
+		if(a<0) 	throw new Exception ("La valeur doit être comprise entre 0 et 20");
+		if(a>20)	throw new Exception ("La valeur doit être comprise entre 0 et 20");
+	}
+}

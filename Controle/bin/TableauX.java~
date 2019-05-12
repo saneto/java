@@ -1,0 +1,101 @@
+import java.io.*;
+
+public class TableauX{
+	int []tab;
+	int N;
+	BufferedReader clavier;
+	public TableauX(int N2)
+	{
+		N=N2;
+		tab= new int [N];
+		clavier=new BufferedReader(new InputStreamReader(System.in));
+	}
+	public void affichetab()
+	{
+		int i;
+		for(i=0;i<N;i++)
+		{
+			System.out.println(tab[i]);
+		}
+	}
+	public void saisietab()
+	{	
+		int i;
+		String s;
+		for(i=0;i<N;i++)
+		{
+			try
+			{
+				s=clavier.readLine();
+				tab[i]=Integer.parseInt(s);
+			}catch(IOException p){}
+		}
+	}
+	public int getPlusGrand()
+	{
+		int i;
+		int ret=tab[0];
+		for(i=0;i<N;i++)
+		{
+			if(ret<tab[i])
+			{
+				ret=tab[i];
+			}
+		}
+		return ret;
+	}
+	public int getPlusPetit()
+	{
+		int i;
+		int ret=tab[0];
+		for(i=1;i<N;i++)
+		{
+			if(ret>tab[i])
+			{
+				ret=tab[i];
+			}
+		}
+		return ret;
+	}
+	public boolean rechercheNombre(int n)
+	{
+		int i;
+		boolean ret=false;
+		for(i=0;i<N;i++)
+		{
+			if(n==tab[i])
+			{
+				ret=true;
+			}
+		}
+		return ret;
+	}
+	public void valalea()
+	{
+		int r,i;
+		for(i=0;i<N;i++)
+		{
+			r=(int)(Math.random() * 200);
+			tab[i]=r;
+		}
+	}
+	public void tri()
+	{
+		int r,i;
+		boolean q=true;
+		do{
+			q=true
+			for(i=0;i<N-1;i++)
+			{
+				if(tab[i]>tab[i+1]
+				{
+					r=tab[i+1];
+					tab[i+1]=tab[i]
+					tab[i]=r;
+					q=false;
+				}
+			}
+		}while(q!=true);
+	}
+	
+}
